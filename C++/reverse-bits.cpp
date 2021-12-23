@@ -15,7 +15,7 @@ public:
     }
 
     std::uint32_t reverseBits2(std::uint32_t n) {
-        // Time : O(32)
+        // Time : O(1)
         // Space: O(1)
         std::uint32_t result = 0;
         std::uint8_t power = 31;

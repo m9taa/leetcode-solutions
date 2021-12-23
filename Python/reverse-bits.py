@@ -10,7 +10,7 @@ class Solution:
         return n
 
     def reverseBits2(self, n: int) -> int:
-        # Time : O(32)
+        # Time : O(1)
         # Space: O(1)
         result = 0
         power = 31
