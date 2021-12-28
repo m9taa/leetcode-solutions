@@ -15,7 +15,8 @@ struct ListNode {
 class Solution {
 public:
     ListNode* mergeKLists(std::vector<ListNode*>& lists) {
-
+        // Time:  O(n * logk)
+        // Space: O(k)
         ListNode* dummy = new ListNode(0);
 
         auto cmp = [](ListNode* lhs, ListNode* rhs) {return lhs->val > rhs->val; }; 

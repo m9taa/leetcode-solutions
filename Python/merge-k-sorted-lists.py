@@ -11,6 +11,8 @@ class ListNode:
 
 class Solution:
     def mergeKLists(self, lists: List[Optional[ListNode]]) -> Optional[ListNode]:
+        # Time:  O(n * logk)
+        # Space: O(k)
         if not lists:
             return
 
