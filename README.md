@@ -13,4 +13,5 @@
 |  169  |  [Majority Element](https://leetcode.com/problems/majority-element/)  |  [C++](C++/majority-element.cpp) / [Python](Python/majority-element.py)  |  O(n)  |  O(1)  |  Easy  |  Array, Hash Table, Divide and Conquer, Sorting, Counting  |
 |  190  |  [Reverse Bits](https://leetcode.com/problems/reverse-bits/)  |  [C++](C++/reverse-bits.cpp) / [Python](Python/reverse-bits.py)  |  O(1)  |  O(1)  |  Easy  |  Divide and Conquer, Bit Manipulation  |
 |  191  |  [Number of 1 Bits](https://leetcode.com/problems/number-of-1-bits/)  |  [C++](C++/number-of-1-bits.cpp) / [Python](Python/number-of-1-bits.py)  |  O(1)  |  O(1)  |  Easy  |  Bit Manipulation  |
+|  234  |  [Palindrome Linked List](https://leetcode.com/problems/palindrome-linked-list/)  |  [C++](C++/palindrome-linked-list.cpp) / [Python](Python/palindrome-linked-list.py)  |  O(n)  |  O(1)  |  Easy  |  Linked List, Two Pointers, Stack, Recursion  |
 |  792  |  [Binary Search](https://leetcode.com/problems/binary-search/)  |  [C++](C++/binary-search.cpp) / [Python](Python/binary-search.py)  |  O(logn)  |  O(1)  |  Easy  |  Array, Binary Search  |
