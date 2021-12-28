@@ -5,6 +5,8 @@
 class Solution {
 public:
     int removeDuplicates(std::vector<int>& nums) {
+        // Time:  O(n)
+        // Space: O(1)
         int max_count = 2;
         int count = 1;
         int slow = 0;

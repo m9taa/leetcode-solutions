@@ -3,6 +3,8 @@ from typing import List
 
 class Solution:
     def removeDuplicates(self, nums: List[int]) -> int:
+        # Time:  O(n)
+        # Space: O(1)
         max_count = 2
         count = 1
         slow = 0
