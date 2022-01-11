@@ -35,6 +35,10 @@ def _get_problem_info(link: str) -> Dict[str, Any]:
             title
             titleSlug
             difficulty
+            codeSnippets {
+                lang
+                code
+            }
             topicTags {
                 name
             }
@@ -42,9 +46,19 @@ def _get_problem_info(link: str) -> Dict[str, Any]:
     }
     '''
     data = requests.post(LEETCODE_GRAPHQL_ENDPOINT, json={'query': query})
-    res = data.json()['data']['question']
-    if not res:
+    if not data.ok:
         raise Exception("Something went wrong, maybe input link is not correct.")
+
+    res = data.json()['data']['question']
+
+    langs_for_snippets = set(LANG_TO_EXTENSION.keys())
+    langs_for_snippets.remove('Python')
+    langs_for_snippets.add('Python3')
+
+    res['codeSnippets'] = {
+        snippet['lang']: snippet['code'] for snippet in res['codeSnippets'] if snippet['lang'] in langs_for_snippets
+    }
+    res['codeSnippets']['Python'] = res['codeSnippets'].pop('Python3')
     return res
 
 
@@ -61,8 +75,8 @@ def generate_solution_files(problem_info: Dict[str, Any]) -> Dict[str, str]:
             for fpath in filepaths.values():
                 os.remove(fpath)
             raise e
-        with open(abs_path, 'a'):
-            pass
+        with open(abs_path, 'w') as fd:
+            fd.write(problem_info['codeSnippets'][lang])
         filepaths[lang] = filepath
     return filepaths
 
